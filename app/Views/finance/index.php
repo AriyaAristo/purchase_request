@@ -68,6 +68,8 @@
                     <th>No</th>
                     <th>Item Name</th>
                     <th>Quantity</th>
+                    <th>Unit Price(USD)</th>
+                    <th>Total Price(USD)</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
@@ -79,6 +81,8 @@
                         <td><?= $i++ ?></td>
                         <td><?= $request['item_name'] ?></td>
                         <td><?= $request['quantity'] ?></td>
+                        <td><?= number_format($request['unit_price'], 2) ?></td>
+                        <td><?= number_format($request['unit_price'] * $request['quantity'], 2) ?></td>
                         <td class="status-<?= strtolower($request['status']) ?>">
                             <?= ucfirst($request['status']) ?>
                             <?php if ($request['status'] != 'pending') : ?>
